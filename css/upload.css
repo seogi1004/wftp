@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+/*--------------------------------------------------------------------------------
+			업로더 위치
+--------------------------------------------------------------------------------*/
+#uploadWrap { display:none; z-index: 203; top: 242px; left: 894px; margin-top: -194.5px; margin-left: -241px; opacity: 1; height: 320px; }
+#uploadWrap h3 { cursor: move; }
+
+/*--------------------------------------------------------------------------------
+			업로드 중복체크 레이어
+--------------------------------------------------------------------------------*/
+.Duplication { width:312px; height:244px; border:solid 2px #2d3452; }
+.Duplication .msg_wrap2 { font-weight:bold; padding:23px 15px 19px; line-height:19px; text-align:center; letter-spacing:-1px; }
+.Duplication .msg_wrap2 span { color:#536fe5; }
+.Duplication .btn_wrap2 { padding:10px 0 0 26px; border-top:solid 1px #e5e5e5; }
+
+/*--------------------------------------------------------------------------------
+			Custom
+--------------------------------------------------------------------------------*/
+.popup_dupl { z-index: 10002; position: absolute; top: 50%; left: 50%; margin-top: -119px; margin-left: -158px; display: none; }
+.popup_dupl_rename { z-index: 100022; position: absolute; top: 50%; left: 50%; margin-top: -95.5px; margin-left: -175px; display: none; }

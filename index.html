@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>[wFTP] - 웹 기반의 FTP 클라이언트</title>
+<meta charset="utf-8">
+<meta name="description" content="wFTP Client">
+<meta name="author" content="Moon-Hak-I">
+
+<link rel="stylesheet" href="http://static.inpost.kr/lib/jquery/plugins/treeview/jquery.treeview.css" />
+<link rel="stylesheet" href="_daum/css/cloud.css" />
+<link rel="stylesheet" href="css/upload.css" />
+<link rel="stylesheet" href="css/download.css" />
+<link rel="stylesheet" href="css/top.css" />
+<link rel="stylesheet" href="css/body.css" />
+<link rel="stylesheet" href="css/popup.css" />
+
+<script src="http://static.inpost.kr/lib/underscore/underscore.js"></script>
+<script src="http://static.inpost.kr/lib/jquery/jquery.js"></script>
+<script src="http://static.inpost.kr/lib/jquery/plugins/ui/jquery-ui-1.8.22.custom.min.js"></script>
+<script src="http://static.inpost.kr/lib/jquery/plugins/treeview/jquery.treeview.js"></script>
+<script src="http://static.inpost.kr/lib/etc/webtoolkit.base64.js"></script>
+<script src="http://app.inpost.kr:1340/socket.io/socket.io.js"></script>
+<script src="js/mvvm.js"></script>
+<script src="js/util.js"></script>
+<script src="ui/_common.js"></script>
+<script src="ui/index.js"></script>
+<script src="ui/upload.js"></script>
+<script src="ui/download.js"></script>
+<script src="ui/popup.js"></script>
+<script src="ui/top.js"></script>
+<script src="ui/body.js"></script>
+<script src="ui/body_left.js"></script>
+<script src="ui/body_main.js"></script>
+<script src="ui/footer.js"></script>
+<script src="ui/menu.js"></script>
+
+<script>
+	var index = null;
+	
+	$(function() {
+		index = new FtpIndex();
+	});	
+</script>
+</head>
+<body>
+	<div id="daumWrap">
+		<div id="topWrap"></div><hr>
+		<div id="bodyWrap"></div><hr>
+		<div id="footerWrap"></div>
+	</div>
+
+	<!-- 템플릿 로드 하는 부분 -->
+	<script>_.importTpl("_common", "auth", "upload", "download", "popup", "menu", "topWrap:top", "bodyWrap:body", "footerWrap:footer");</script>
+</body>
+</html>

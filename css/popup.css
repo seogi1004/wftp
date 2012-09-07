@@ -1,0 +1,14 @@
+.wrap_layer_popup .popup_font { font-family: "Century Gothic", "Trebuchet MS", "맑은 고딕", Dotum, Verdana, AppleGothic, Sans-serif; }
+.wrap_layer_popup .area_head h2 { padding-top: 18px; font-weight: 800; color: #123456; }
+.wrap_layer_popup .area_msg { padding: 30px 30px 30px 30px; }
+.wrap_layer_popup .area_msg td { width: 150px; }
+.wrap_layer_popup .area_msg input { width: 150px; }
+.wrap_layer_popup .area_msg #document { border-width:0px; overflow: hidden; }
+.wrap_layer_popup .area_msg .link { width: 100%; }
+
+#popupWrap { display: none; }
+#popupWrap .popup_confirm { z-index: 10002; margin-top: 0px; margin-left: 0px; position: fixed; display:none; }
+#popupWrap .blinder { position: absolute; top: 0px; right: 0px; background-color: black; opacity: 0.2; width: 100%; z-index: 10001; }
+#popupWrap .btn_close { cursor: pointer; }
+#popupWrap h2 small { color: #a9a9a9; font-weight: 500; font-size: 13px; }
+#popupWrap h2 small a { color: #a9a9a9; font-weight: 500; font-size: 13 px; text-decoration: none; }

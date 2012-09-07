@@ -1,0 +1,7 @@
+@charset "utf-8";
+
+/*--------------------------------------------------------------------------------
+			업로더 위치
+--------------------------------------------------------------------------------*/
+#downloadWrap { display:none; z-index: 203; top: 242px; left: 894px; margin-top: -194.5px; margin-left: -241px; opacity: 1; height: 320px; }
+#downloadWrap h3 { cursor: move; }
