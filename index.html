@@ -20,7 +20,7 @@
 <script src="http://static.inpost.kr/lib/jquery/plugins/treeview/jquery.treeview.js"></script>
 <script src="http://static.inpost.kr/lib/etc/webtoolkit.base64.js"></script>
 <script src="http://app.inpost.kr:1340/socket.io/socket.io.js"></script>
-<script src="js/mvvm.js"></script>
+<script src="http://app.inpost.kr/vojs/vo.js"></script>
 <script src="js/util.js"></script>
 <script src="ui/_common.js"></script>
 <script src="ui/index.js"></script>
@@ -34,6 +34,7 @@
 <script src="ui/footer.js"></script>
 <script src="ui/menu.js"></script>
 
+<script>window.MvvmUI = vo;</script>
 <script>
 	var index = null;
 	
@@ -50,6 +51,6 @@
 	</div>
 
 	<!-- 템플릿 로드 하는 부분 -->
-	<script>_.importTpl("_common", "auth", "upload", "download", "popup", "menu", "topWrap:top", "bodyWrap:body", "footerWrap:footer");</script>
+	<script>MvvmUI.includeTpl("_common", "auth", "upload", "download", "popup", "menu", "topWrap:top", "bodyWrap:body", "footerWrap:footer", { path: "tpl" });</script>
 </body>
 </html>

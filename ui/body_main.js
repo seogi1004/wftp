@@ -10,7 +10,7 @@
 			bind		= this.bind,
 			tpl			= this.tpl,
 			act			= this.act,
-			tag			= this.tag
+			tag			= this.tag;
 		
 		
 		//-- Public Methods
@@ -82,30 +82,29 @@
 		act.onlyCheckedFile = function(e) {
 			var targetIndex = $(e.currentTarget).data("index");
 			
-			if(e.target != tag.ck_files(targetIndex)) { // 체크박스 클릭시 제외
-				var ftpFile = main.body.getFtpFileIndex(targetIndex),
-					itemList = tag.get("item");
+			if(e.target != tag.ck_files[targetIndex]) { // 체크박스 클릭시 제외
+				var ftpFile = main.body.getFtpFileIndex(targetIndex);
 					
-				for(var name in itemList) {
-					var target = itemList[name],
-						index = $(itemList[name]).data("index"),
+				for(var name in tag.item) {
+					var target = tag.item[name],
+						index = $(tag.item[name]).data("index"),
 						isChecked = (ftpFile.name == name) ? true : false;
-					
+						
 					checkedFile(target, index, isChecked);
 				}
 			}
 		}
 		
 		act.showRenameTxt = function(e, index) {
-			$(tag.file_name(index)).hide();
-			$(tag.rename_txt(index)).show();
+			$(tag.file_name[index]).hide();
+			$(tag.rename_txt[index]).show();
 		}
 		
 		act.changeName = function(e, index) {
 			if(e.keyCode == 13) {
 				// before, after 파일명 가져오기
 				var ftpFile = main.body.getFtpFileIndex(index),
-					rename = tag.rename_txt(index).value;
+					rename = tag.rename_txt[index].value;
 					
 				//
 				main.body.changeName(ftpFile.name, rename);
@@ -113,7 +112,7 @@
 		}
 		
 		act.orderList = function(e, t) {
-			var orders = bind.get("orderType"), o;
+			var orders = tag.orderType, o;
 			var cls = $(orders[t]).attr("class");
 			
 			if(cls == "selectbox_asc") o = "desc";
@@ -124,10 +123,12 @@
 			
 			//-- UI 변경
 			for(var i in orders) {
+				var selOrder = $(orders[i]);
+				
 				if(t == i) {
-					bind.orderType(i, "selectbox_" + o);
+					selOrder.removeClass("selectbox_none").addClass("selectbox_" + o);
 				} else {
-					bind.orderType(i, "selectbox_none");
+					selOrder.removeClass("selectbox_" + o).addClass("selectbox_none");
 				}
 			}
 		}
@@ -142,7 +143,7 @@
 				bind.orderName(arrName[t]);
 			} else {			
 				main.body.wftp.menu.orderShow(function(t) {
-					var orders = bind.get("orderType");
+					var orders = tag.orderType;
 					
 					if($(orders).html() == "내림차순") o = "desc";
 					else o = "asc";
@@ -239,7 +240,7 @@
 		}
 		
 		act.allChecked = function(e) {
-			var ck_files = main.filelist.tag.get("ck_files");
+			var ck_files = main.filelist.tag.ck_files;
 			self.isAllChecked = !self.isAllChecked;
 			
 			for(var i in ck_files) {

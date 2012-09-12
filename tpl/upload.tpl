@@ -2,7 +2,7 @@
 	<h3 class="ir">HTML5 업로드</h3>
 	<div class="wrap">
 	    <div class="select_wrap">
-	        <input type="file" data-act="selectedFiles" data-tag="selfiles" data-type="change" multiple="multiple">
+	        <input type="file" data-act="selectedFiles#change" data-tag="selfiles" multiple="multiple">
 	        <span class="pos">올릴위치</span> <span class="folder_name folder" data-bind="folderName"></span> 
 	        <button class="btn_add_file"><span>파일추가</span></button>
 	        <!--
@@ -62,7 +62,7 @@
 	        </div>
 	    </div>
 	    <div class="info_wrap">
-	        <div id="uploaderGauge" class="gauge_wrap"><div class="j_gaugebar" style="overflow: hidden; "><div class="j_gauge_infoarea" data-bind="sendPercent">0%</div><div class="j_gauge" style="width: 0px;" data-bind="barPercent" data-css="width"><div class="j_gauge_infoarea_shadow" data-bind="sendPercent">0%</div></div></div></div>
+	        <div id="uploaderGauge" class="gauge_wrap"><div class="j_gaugebar" style="overflow: hidden; "><div class="j_gauge_infoarea" data-bind="sendPercent">0%</div><div class="j_gauge" style="width: 0px;" data-bind="barPercent#width"><div class="j_gauge_infoarea_shadow" data-bind="sendPercent">0%</div></div></div></div>
 	        <div class="alert_wrap" id="uploaderAlert" style="display:none;">
 	            용량이 <span class="bold" id="uploaderAlertCnt"></span> 부족합니다. 목록에서 파일을 삭제해주세요.
 	        </div>

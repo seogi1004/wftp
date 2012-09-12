@@ -99,7 +99,7 @@
 		    <div class="wrap_cont">
 		        <div class="area_msg">
 		            <span><%= title %></span><br><br>
-		            <input data-tag="confirm_text" data-act="confirmOkEnter" data-type="keyup" type="text" class="lyc txt1" value="<%= text %>" />
+		            <input data-tag="confirm_text" data-act="confirmOkEnter#keyup" type="text" class="lyc txt1" value="<%= text %>" />
 		        </div><!-- // area_body -->
 		        <div class="area_foot">
 		            <button class="btn_layer btn_ok" data-act="confirmOk"><span>확인</span></button>
@@ -115,7 +115,7 @@
 		    <div class="wrap_cont">
 		        <div class="area_msg">
 		           <p class="msg">아래 링크를 복사해주세요.</p>
-		           <p class="msg_info"><input type="text" class="lyc txt1 link" value="<%= link %>" /></p>
+		           <p class="msg_info"><input data-tag="link_txt" type="text" class="lyc txt1 link" value="<%= link %>" /></p>
 		        </div><!-- // area_body -->
 		        <a class="type_btn btn_layer btn_close" data-act="commonCancel">닫기</a>
 		    </div>

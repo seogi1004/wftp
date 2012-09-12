@@ -6,7 +6,7 @@
 	<a href="javascript:;"><span id="quarterWrap">사용 <span class="current ">3.7GB</span></span></a><span class="divide">/</span><a id="quarterTotalWrap" href="javascript:;" class="total">50GB</a>
 -->
 </div>
-<div class="folder_list_wrap" data-bind="leftMenu" data-css="width"><br>
+<div class="folder_list_wrap" data-bind="leftMenu#width"><br>
 	<ul id="dirList" class="filetree">
 		<!-- tree menu 들어오는 곳 -->
 	</ul>

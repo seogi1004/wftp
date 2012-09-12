@@ -39,11 +39,11 @@
 		<!--
 		<a href="#" class="view_file_type selectbox">파일별 보기</a>
 		-->
-		<div class="view_mode" data-bind="listtype" data-css="display">
+		<div class="view_mode" data-bind="listtype#display">
 			<span class="btn_list_view" title="리스트 보기">리스트 보기</span>
 			<a class="btn_icon_view" href="#" title="미리보기" data-act="view:changeMode">미리보기</a>
 		</div>
-		<div class="view_mode" data-bind="viewtype" data-css="display">
+		<div class="view_mode" data-bind="viewtype#display">
 			<a class="btn_list_view" href="#" title="리스트 보기" data-act="list:changeMode">리스트 보기</a>
 			<span class="btn_icon_view" title="미리보기">미리보기</span>
 		</div>
@@ -59,7 +59,7 @@
 		<div class="icon_header">
 			<div class="fl">
 				<span class="fl">정렬기준&nbsp;&nbsp;:&nbsp;&nbsp;</span>
-				<a href="#" class="type fl" data-act="orderPreview" data-bind="orderName">이름순</a>
+				<a href="#" class="type fl" data-bind="orderName" data-act="orderPreview">이름순</a>
 	
 				<span class="seperator fl">-</span>
 				<a href="#" class="order fl" data-bind="orderType" data-act="changeOrder">오름차순</a>
@@ -69,7 +69,7 @@
 			<div data-tag="viewRoot" class="icon_contents level1">
 				<div class="item parent">
 					<div class="image">
-						<span data-act="<%= p_path %>:changePath" data-type="dblclick" class="ext_b ext_b_parent_dir ir">디렉토리</span>
+						<span data-act="<%= p_path %>:changePath#dblclick" class="ext_b ext_b_parent_dir ir">디렉토리</span>
 					</div>
 					<div class="name">
 						<span title="상위폴더로 가기">..</span>
@@ -80,9 +80,9 @@
 				<div class="item" data-index="<%= i %>" data-tag="<%= items[i].name %>:item" data-act="onlyCheckedFile">
 					<div class="image">
 						<% if(items[i].is_dir) { %>
-						<span data-act="<%= items[i].f_path %>:changePath" data-type="dblclick" class="ext_b ir ext_b_dir">dir</span>
+						<span data-act="<%= items[i].f_path %>:changePath#dblclick" class="ext_b ir ext_b_dir">dir</span>
 						<% } else { %>
-						<span data-act="<%= items[i].name %>:link" data-type="dblclick" class="ext_b ir ext_<%= items[i].t_ext %>_b ext_<%= items[i].t_ext %>_<%= items[i].ext %>_b">file</span>
+						<span data-act="<%= items[i].name %>:link#dblclick" class="ext_b ir ext_<%= items[i].t_ext %>_b ext_<%= items[i].t_ext %>_<%= items[i].ext %>_b">file</span>
 						<% } %>
 					</div>
 					<div class="info">
@@ -90,9 +90,9 @@
 						<a href="#" class="lyc btn_favorite_off ir fl" title="중요표시 on/off">중요표시</a>
 					</div>
 					<div class="name">
-						<span data-act="<%= i %>:showRenameTxt" data-type="dblclick">
+						<span data-act="<%= i %>:showRenameTxt#dblclick">
 							<a data-tag="<%= i %>:file_name"><%= items[i].name %></a>
-							<input type="text" data-act="<%= i %>:changeName" data-type="keyup" data-tag="<%= i %>:rename_txt" value="<%= items[i].name %>" class="txt1" />
+							<input type="text" data-act="<%= i %>:changeName#keyup" data-tag="<%= i %>:rename_txt" value="<%= items[i].name %>" class="txt1" />
 						</span>
 					</div>
 				</div>
@@ -109,10 +109,10 @@
 		        <tr>
 		            <th class="h_c_0 no_left_line">&nbsp;</th>
 		            <th class="h_c_1 no_left_line"><span>중요</span></th>
-		            <th class="h_c_2 kind"><a href="#" data-act="ext:orderList" data-bind="ext:orderType" data-attr="class">종류</a></th>
-		            <th class="h_c_3 name"><a href="#" data-act="name:orderList" data-bind="name:orderType" data-attr="class">이름</a></th>
-		            <th class="h_c_4 size"><a href="#" data-act="size:orderList" data-bind="size:orderType" data-attr="class">크기</a></th>
-		            <th class="h_c_5 mdate"><a href="#" data-act="date:orderList" data-bind="date:orderType" data-attr="class">변경한 날짜</a></th>
+		            <th class="h_c_2 kind"><a href="#" data-act="ext:orderList" data-tag="ext:orderType">종류</a></th>
+		            <th class="h_c_3 name"><a href="#" data-act="name:orderList" data-tag="name:orderType">이름</a></th>
+		            <th class="h_c_4 size"><a href="#" data-act="size:orderList" data-tag="size:orderType">크기</a></th>
+		            <th class="h_c_5 mdate"><a href="#" data-act="date:orderList" data-tag="date:orderType">변경한 날짜</a></th>
 		            <th class="h_c_6 udate">&nbsp;</th>
 		        </tr>
 		    </thead>
@@ -124,7 +124,7 @@
 						<td class="c_c_0"><span class="ico_folder ico_folder_parent">&nbsp;</span></td>
 						<td class="c_c_1">
 							<span class="parent">
-								<a data-act="<%= p_path %>:changePath" data-type="dblclick">..</a>
+								<a data-act="<%= p_path %>:changePath#dblclick">..</a>
 							</span>
 						</td>
 			
@@ -156,13 +156,13 @@
 						<td class="c_c_3">
 							<div>
 								<span title="<%= items[i].name %>">
-									<a href="#" data-act="<%= i %>:showRenameTxt" data-type="dblclick" title="이름변경"><img src="http://app.inpost.kr/wftp/_daum/img/btn_rename.gif" class="btn_rename" /></a>
+									<a href="#" data-act="<%= i %>:showRenameTxt#dblclick" title="이름변경"><img src="http://app.inpost.kr/wftp/_daum/img/btn_rename.gif" class="btn_rename" /></a>
 									<% if(items[i].is_dir) { %>
-									<a data-tag="<%= i %>:file_name" data-act="<%= items[i].f_path %>:changePath" data-type="dblclick"><%= items[i].name %></a>
+									<a data-tag="<%= i %>:file_name" data-act="<%= items[i].f_path %>:changePath#dblclick"><%= items[i].name %></a>
 									<% } else { %>
-									<a data-tag="<%= i %>:file_name" data-act="<%= items[i].name %>:link" data-type="dblclick"><%= items[i].name %></a>
+									<a data-tag="<%= i %>:file_name" data-act="<%= items[i].name %>:link#dblclick"><%= items[i].name %></a>
 									<% } %>
-									<input type="text" data-act="<%= i %>:changeName" data-type="keyup" data-tag="<%= i %>:rename_txt" value="<%= items[i].name %>" class="txt1" />
+									<input type="text" data-act="<%= i %>:changeName#keyup" data-tag="<%= i %>:rename_txt" value="<%= items[i].name %>" class="txt1" />
 								</span>
 							</div>
 						</td>

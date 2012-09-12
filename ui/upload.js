@@ -390,7 +390,7 @@
             	if(data.order == 'start') {
             		// UI
             		ui_uplist.bind.fileWait(data.fileIndex, "<span class='upload_progress'>처리 중</span>");
-            		$(ui_uplist.tag.fileDelBut(data.fileIndex)).hide();
+            		$(ui_uplist.tag.fileDelBut[data.fileIndex]).hide();
             		
             	} else if(data.order == 'ing') {
             		// 블롭 전송 재귀함수 호출

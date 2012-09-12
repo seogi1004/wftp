@@ -50,7 +50,7 @@
 	        </div>
 	    </div>
 	    <div class="info_wrap">
-	        <div id="uploaderGauge" class="gauge_wrap"><div class="j_gaugebar" style="overflow: hidden; "><div class="j_gauge_infoarea" data-bind="downPercent">0%</div><div class="j_gauge" style="width: 0px;" data-bind="barPercent" data-css="width"><div class="j_gauge_infoarea_shadow" data-bind="downPercent">0%</div></div></div></div>
+	        <div id="uploaderGauge" class="gauge_wrap"><div class="j_gaugebar" style="overflow: hidden; "><div class="j_gauge_infoarea" data-bind="downPercent">0%</div><div class="j_gauge" style="width: 0px;" data-bind="barPercent#width"><div class="j_gauge_infoarea_shadow" data-bind="downPercent">0%</div></div></div></div>
 	        <div class="status_wrap">
 	        파일 : <span class="bold" data-bind="currCnt">0</span>/<span data-bind="totalCnt">0</span>&nbsp;&nbsp;&nbsp;&nbsp;
 	        용량 : <span class="bold" data-bind="currSize">0MB</span>/<span data-bind="totalSize">0MB</span>&nbsp;&nbsp;&nbsp;&nbsp;

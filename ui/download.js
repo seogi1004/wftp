@@ -241,7 +241,7 @@
 	            ftpBlobList = [];
 	            
         		downlist.bind.fileWait(data.fileIndex, "<span class='upload_progress'>처리 중</span>");
-        		$(downlist.tag.fileDelBut(data.fileIndex)).hide();
+        		$(downlist.tag.fileDelBut[data.fileIndex]).hide();
 	    		
 	    		//	
 	    		socket.emit("download", args);

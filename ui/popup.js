@@ -72,12 +72,14 @@
 			}
 			
 			commonShow();
+			tag.confirm_text.focus();
 		}
 		
 		self.linkStrShow = function(name) {
 			tpl.tpl_link("popup_main", { link: getLink(name) });
 			
 			commonShow();
+			tag.link_txt.focus();
 		}
 		
 		
