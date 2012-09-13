@@ -60,7 +60,7 @@ body {
   color:#373737;
   background: #212121;
   font-size: 16px;
-  font-family: 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
+  font-family: 'Myriad Pro', '맑은 고딕', Dotum, Calibri, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
@@ -69,7 +69,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 10px 0;
   font-weight: 700;
   color:#222222;
-  font-family: 'Lucida Grande', 'Calibri', Helvetica, Arial, sans-serif;
+  font-family: 'Lucida Grande', '맑은 고딕', Dotum, Calibri, Helvetica, Arial, sans-serif;
   letter-spacing: -1px;
 }
 
@@ -163,7 +163,7 @@ pre, code {
   color: #222;
   background-color: #fff;
 
-  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", '맑은 고딕', Dotum, Terminal, monospace;
   font-size: 14px;
 
   border-radius: 2px;
@@ -241,7 +241,7 @@ table {
  }
 
 th {
-  font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Lucida Grande', 'Helvetica Neue', '맑은 고딕', Dotum, Helvetica, Arial, sans-serif;
   padding: 10px;
   background: #373737;
   color: #fff;
@@ -272,7 +272,7 @@ Full-Width Styles
 
 .inner {
   position: relative;
-  max-width: 640px;
+  max-width: 800px;
   padding: 20px 10px;
   margin: 0 auto;
 }
