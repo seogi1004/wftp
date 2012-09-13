@@ -1,3 +1,7 @@
+<div id="fblikebut">
+    <div class="fb-like" data-href="http://app.inpost.kr/wftp/index.html" data-send="true" data-width="500" data-show-faces="false" data-colorscheme="dark" data-font="arial"></div>
+</div>
+
 <div id="wrapMinidaum">
 	<div id="minidaum">
 		<div class="minidaum_gnb">

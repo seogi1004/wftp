@@ -2,3 +2,5 @@
 #minidaumMoreLayer .minidaum_list_group2 { width: 160px; padding-left:8px; }
 #minidaumMoreLayer { width: 338px; }
 #minidaumMoreLayer .minidaum_list_group { margin-top: 0px; }
+
+#fblikebut { position: absolute; top: 10px; left: 15px; line-height: 13px; }
