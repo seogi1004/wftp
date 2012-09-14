@@ -16,7 +16,6 @@
 			
 			var def_args = _.extend({ 
 				type: "auth",
-				f_size: FtpFile.fileMaxSize,
 				p_size: FtpFile.packetSize
 			}, ftpInfo); 
 			

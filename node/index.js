@@ -6,14 +6,6 @@ var FTPManager = require("./wftp"),
 // Socket IO 설정
 io.set('log level', 0);
 
-// QA용, 개발자 기본 FTP
-var def_args = {
-	host: "ftp.inpost.kr",
-	user: "ftpuser",
-	passwd: "service123!",
-	d_path: "/seogi1004/test"
-};
-
 // 현재 클라이언트 접속자 수
 var total_cnt = 0;
 
@@ -30,7 +22,7 @@ io.sockets.on('connection', function(socket) {
 		if(ftpm) ftpmClose();
 		
 		// FTP서버에 새로 연결
-        ftpm = new FTPManager(socket, _.extend(def_args, args));
+        ftpm = new FTPManager(socket, args);
         ftpm.auth(function(err) {
         	var res = "success";
         	
@@ -42,7 +34,7 @@ io.sockets.on('connection', function(socket) {
 			socket.emit("auth", { result: res });
 			
 			// 사용자 인증 로그
-			console.log("[" + res + "] - " + JSON.stringify(def_args));
+			console.log("[" + res + "] - " + JSON.stringify(args));
 		});
 	});
 	

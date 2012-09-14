@@ -70,7 +70,7 @@
 			var overFiles = [];
 			
 			for(var i in self.downlist) {
-				if(self.downlist[i].size > (FtpFile.fileMaxSize * 1024 * 1024)) {
+				if(self.downlist[i].size > (FtpFile.fileDownMaxSize * 1024 * 1024)) {
 					overFiles.push(self.downlist[i]);
 				} 
 			}
@@ -215,10 +215,11 @@
 				var overFiles = downlist.getOverFiles();
 				
 				if(overFiles.length > 0) {
-					var len = overFiles.length;
+					var len = overFiles.length,
+						msg = "<p class='msg_info'>파일 한 개당 최대 크기는 " + FtpFile.fileDownMaxSize  + "MB입니다.</p>";
 					
-					if(len == 1) alert("'" + overFiles[0].name + "' 파일의 용량이 너무 큽니다.");
-					else 		 alert("'" + overFiles[0].name + "' 외 " + (len - 1) + "개 파일의 용량이 너무 큽니다.");
+					if(len == 1) alert("<p class='msg'><span>'" + overFiles[0].name + "' 파일의 용량이 너무 큽니다.</span></p>" + msg);
+					else 		 alert("<p class='msg'><span>'" + overFiles[0].name + "' 외 " + (len - 1) + "개 파일의 용량이 너무 큽니다.</span></p>" + msg);
 				} else {
 					downloadFile(0);
 				}

@@ -219,7 +219,7 @@
 			var overFiles = [];
 			
 			for(var i in self.uplist) {
-				if(self.uplist[i].size > (FtpFile.fileMaxSize * 1024 * 1024)) {
+				if(self.uplist[i].size > (FtpFile.fileUpMaxSize * 1024 * 1024)) {
 					overFiles.push(self.uplist[i]);
 				} 
 			}
@@ -254,7 +254,7 @@
 		
 		function init() {
 			// UI, 업로드 디렉토리
-			self.bind.fileMaxSize(FtpFile.fileMaxSize);
+			self.bind.fileMaxSize(FtpFile.fileUpMaxSize);
 			
 			// UI, 드래그 적용
 			$(self.root).draggable({ handle: "h3" });
@@ -333,10 +333,11 @@
 				var overFiles = ui_uplist.getOverFiles();
 				
 				if(overFiles.length > 0) {
-					var len = overFiles.length;
+					var len = overFiles.length,
+						msg = "<p class='msg_info'>파일 한 개당 최대 크기는 " + FtpFile.fileUpMaxSize  + "MB입니다.</p>";
 					
-					if(len == 1) alert("'" + overFiles[0].name + "' 파일의 용량이 너무 큽니다.");
-					else 		 alert("'" + overFiles[0].name + "' 외 " + (len - 1) + "개 파일의 용량이 너무 큽니다.");
+					if(len == 1) alert("<p class='msg'><span>'" + overFiles[0].name + "' 파일의 용량이 너무 큽니다.</span></p>" + msg);
+					else 		 alert("<p class='msg'><span>'" + overFiles[0].name + "' 외 " + (len - 1) + "개 파일의 용량이 너무 큽니다.</span></p>" + msg);
 				} else {
 					// 파일 전송 대상 폴더의 파일 목록 가져오기
 					socket.emit("upload", { order: "check", nodeType: 0, path: path });

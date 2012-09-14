@@ -303,8 +303,9 @@
 		this.setFullPath(this.name);
 	};
 	
-	FtpFile.fileMaxSize = 1;						// 전송 파일 최대 용량 (단위 MB)
-	FtpFile.packetSize = 64;						// 파일 패킷 전송시 크기 (단위 KB)
+	FtpFile.fileUpMaxSize = 5;		// 업로드 파일 최대 용량 (단위 MB)
+	FtpFile.fileDownMaxSize = 1;	// 다운로드 파일 최대 용량 (단위 MB)
+	FtpFile.packetSize = 64;		// 파일 패킷 전송시 크기 (단위 KB)
 	
 	FtpFile.getSizeStr = function(size) {
 		var result = 0;
