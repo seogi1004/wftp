@@ -85,11 +85,13 @@ h2 {
 }
 
 h3 {
-  font-size: 24px;
+  font-size: 25px;
+  margin-bottom: 25px;
 }
 
 h4 {
-  font-size: 21px;
+  font-size: 20px;
+  color: #123456;
 }
 
 h5 {
@@ -101,7 +103,7 @@ h6 {
 }
 
 p {
-  margin: 10px 0 15px 0;
+  margin: 10px 0 20px 0;
 }
 
 footer p {
@@ -262,6 +264,10 @@ img {
   max-width: 100%;
 }
 
+.section {
+	margin-bottom: 50px;
+}
+
 /*******************************************************************************
 Full-Width Styles
 *******************************************************************************/
@@ -407,11 +413,13 @@ Small Device Styles
   }
 
   h3 {
-    font-size: 21px;
+    font-size: 22px;
+    margin-bottom: 22px;
   }
 
   h4 {
-    font-size: 18px;
+    font-size: 17px;
+    color: #123456;
   }
 
   h5 {

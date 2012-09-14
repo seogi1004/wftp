@@ -3,8 +3,8 @@
 <head>
 <meta charset='utf-8' />
 <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-<meta name="description" content="wFTP Client : " />
-<title>[Test] wFTP Client</title>
+<meta name="description" content="wFTP : Web Based FTP Client" />
+<title>Web Based FTP Client - wFTP</title>
 
 <script type="text/javascript" src="http://static.inpost.kr/lib/jquery/jquery.js"></script>
 <script type="text/javascript" src="http://static.inpost.kr/lib/syntaxhighlighter/scripts/shCore.js"></script>
@@ -49,55 +49,119 @@
 <!-- MAIN CONTENT -->
 <div id="main_content_wrap" class="outer">
 <section id="main_content" class="inner">
-	<h3>Welcome to GitHub Pages.</h3>
-
-	<p>
-		This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:
-	</p>
-	<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+	<div class="section">
+		<h3>wFTP 클라이언트 소개</h3>
+		<p>
+			wFTP 클라이언트는 웹 브라우저에서 동작하는 FTP 프로그램이며, 웹 개발시 좀 더 편리하게 파일들을 관리하기 위해 만들었습니다. 
+			이미지나 문서 파일들을 미리보기 할 수 있으며, FTP 서버가 웹 서버일 경우에는 해당 링크를 쉽게 가져올 수 있습니다.<br>
+			
+			<img src="http://static.inpost.kr/post/wftp/4.jpg" style="max-width: 47%" />
+			<img src="http://static.inpost.kr/post/wftp/10.jpg" style="max-width: 47%" />
+			<img src="http://static.inpost.kr/post/wftp/20.jpg" style="max-width: 47%" />
+			<img src="http://static.inpost.kr/post/wftp/22.jpg" style="max-width: 47%" />
+			<br/>
+			
+			위의 그림은 wFTP 클라이언트의 실행화면이며, 디자인과 코딩은 <a href="http://cloud.daum.net" target="_blank">다음클라우드</a>를 참고하였습니다. 
+			좀 더 자세한 소개글을 보고 싶으시다면 <a href="http://blog.naver.com/seogi1004/110146708115" target="_blank">바로가기</a>를 클릭해주세요.
+		</p>
+		
+		<h4>지원 브라우저</h4>
+		<p>
+			크롬과 파이어폭스 최신 버전에서만 동작합니다. (IE는 9버전 이후부터 일부 기능만 동작)
+		</p>
+		
+		<h4>데모 페이지</h4>
+		<p>
+			FTP 서버 계정을 가지고 있지 않는 분들을 위해 직접 접속하여 테스트 할 수 있는 계정을 세팅해두었습니다.<br>
+			업로드/다운로드 파일의 크기 제한이 있습니다. (업로드: 5MB, 내려받기: 10MB, 링크받기: 제한없음)<br>
+			<a href="http://app.inpost.kr/wftp/index.html" target="_blank"><img src="http://static.inpost.kr/post/wftp/intro/demo.png" style="height: 200px;" /></a>
+		</p>
+	</div>
 	
-	<p>
-		If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.
-	</p>
+	<div class="section">
+		<h3>wFTP 클라이언트 아키텍처</h3>
+		<p>
+			wFTP 클라이언트의 서버 단은 <a href="http://nodejs.org/" target="_blank">Node.js</a> 기반으로 구현되어 있으며, 확장 모듈로 
+			<a href="http://documentcloud.github.com/underscore/" target="_blank">underscore</a>와 
+			<a href="https://github.com/sergi/jsftp" target="_blank">jsftp</a> 그리고 
+			<a href="http://socket.io/" target="_blank">socket.io</a>를 사용하였습니다. 아래 그림에 있는 <code>index</code>와 <code>wftp</code>는 
+			클라이언트에서 요청한 메시지를 처리하는 기능이 구현되어 있고, 300라인 정도의 매우 간결한 코드입니다.
+			
+			<img src="http://static.inpost.kr/post/wftp/intro/architecture.jpg"/>
+		</p>
+		
+		<h4>UI 개발 컨셉</h4>
+		<p>
+			wFTP는 서버 쪽과는 달리 클라이언트의 구조가 매우 복잡합니다. 
+			그 이유는 하나의 페이지에서 모든 기능을 수행하는 <a href="http://en.wikipedia.org/wiki/Single-page_application" target="_blank">SPA</a> 방식으로 구현되었기 때문입니다. 
+			그래서 어떻게 하면 효율적으로 UI 개발을 할 수 있을까라는 고민을 하다가 <a href="http://seogi1004.github.com/vojs/" target="_blank">vojs</a>라는 
+			View-Object 컨셉의 UI 프레임워크를 만들게 되었습니다.
+		</p>
+		
+		<h4>View-Object란?</h4>
+		<p>
+			vo는 웹 페이지에서 뷰가 되는 HTML 코드와 뷰를 구성하는 데이터, 즉 오브젝트가 같다라는 것이 기본 컨셉입니다. 
+			먼저 아래 뷰 코드를 보도록 하겠습니다.<br/>
+			
+			<pre class="brush: html;">
+				<div id="person1">
+				    <span data-bind="name"></span>, 
+				    <span data-bind="age"></span>, 
+				    <a href="#" data-act="addAge">1년 후</a>
+				</div>
+				---------------------------------------------<br>
+				<div id="person2">
+					<span data-bind="name"></span>, 
+				    <span data-bind="age"></span>, 
+				    <a href="#" data-act="addAge">1년 후</a>
+			  	</div>			
+			</pre>
+			
+			위의 코드는 <code>person1</code>과 <code>person2</code>의 이름과 나이를 보여주는 뷰입니다. 
+			그리고 뷰 코드와 매칭할 오브젝트의 클래스를 정의하도록 하겠습니다.<br/>
+			<pre class="brush: js;">
+				var Person = function(id, name, age) {
+				  // View-Object 상속
+				  vo.applyTo(this, id);
+				  
+				  var self = this;
+				  
+				  self.name = name;
+				  self.age = age;
+				  
+				  self.bind.name(self.name);
+				  self.bind.age(self.age);
+				  
+				  self.act.addAge = function() {
+				    self.bind.age(++self.age);
+				  }
+				};
+			</pre>
+			
+			<code>Person</code>이라는 클래스를 만들었으니 뷰 코드에서의 <code>person1</code>과 <code>person2</code>의 오브젝트를 생성하겠습니다.
+			<pre class="brush: js;">
+				var person1 = new Person("person1", "문학이", 27),
+    				person2 = new Person("person2", "살라딘", 27);
+			</pre>
+			
+			문학이와 살라딘이라는 이름을 가진 오브젝트를 생성하였다면 아래와 같은 화면이 출력될 것입니다.<br>
+			<img src="http://static.inpost.kr/post/wftp/intro/1.jpg" style="width: 384px;" /><br>
+			
+			<code>1년 후</code> 링크를 클릭하면 대상의 나이가 증가하게 됩니다.
+			
+			http://jsbin.inpost.kr:8080/agamid/21
+		</p>
+	</div>
 
-	<h3>Designer Templates</h3>
-
-	<p>
-		We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.
-	</p>
-
-	<h3>Rather Drive Stick?</h3>
-
-	<p>
-		If you prefer to not use the automatic generator, push a branch named <code>
-			gh-pages</code>
-		to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.
-	</p>
-
-	<h3>Authors and Contributors</h3>
-
-	<p>
-		You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>
-			&lt;a&gt;</code>
-		element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.
-	</p>
-
-	<h3>Support or Contact</h3>
-	
-	<p>
-		Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.
-	</p>
-
-	<section class="section">
+	<div class="section">
 		<h3>신택스 하일라이트 테스트</h3>
 		
 		<pre id="js" class="brush: js;">
 			$(function() { alert(1); });			
 		</pre>
-	</section>
+	</div>
+	
+	<div class="section">&nbsp;</div>
 </section>
 </div>
 
