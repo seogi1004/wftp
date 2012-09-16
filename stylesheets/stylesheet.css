@@ -59,7 +59,7 @@ body {
   box-sizing: border-box;
   color:#373737;
   background: #212121;
-  font-size: 16px;
+  font-size: 14px;
   font-family: 'Myriad Pro', '맑은 고딕', Dotum, Calibri, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -85,17 +85,19 @@ h2 {
 }
 
 h3 {
-  font-size: 25px;
-  margin-bottom: 25px;
+  font-size: 24px;
+  margin-bottom: 24px;
 }
 
 h4 {
-  font-size: 20px;
+  font-size: 18px;
+  margin-bottom: 14px;
   color: #123456;
 }
 
 h5 {
-  font-size: 18px;
+  font-size: 16px;
+  color: #502138;
 }
 
 h6 {
@@ -103,7 +105,7 @@ h6 {
 }
 
 p {
-  margin: 10px 0 20px 0;
+  margin: 10px 0 23px 0;
 }
 
 footer p {
@@ -166,14 +168,11 @@ pre, code {
   background-color: #fff;
 
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", '맑은 고딕', Dotum, Terminal, monospace;
-  font-size: 14px;
+  font-size: 12px;
 
   border-radius: 2px;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
-
-
-
 }
 
 pre {
@@ -413,12 +412,13 @@ Small Device Styles
   }
 
   h3 {
-    font-size: 22px;
-    margin-bottom: 22px;
+    font-size: 21px;
+    margin-bottom: 21px;
   }
 
   h4 {
-    font-size: 17px;
+    font-size: 15px;
+    margin-bottom: 11px;
     color: #123456;
   }
 
