@@ -32,9 +32,6 @@ io.sockets.on('connection', function(socket) {
 			}
 			
 			socket.emit("auth", { result: res });
-			
-			// 사용자 인증 로그
-			console.log("[" + res + "] - " + JSON.stringify(args));
 		});
 	});
 	
