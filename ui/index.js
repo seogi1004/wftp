@@ -1,7 +1,7 @@
 (function(exports) {
-	var FtpIndex = function() {
+	var FtpIndex = function(port) {
 		var self 		= this,
-			socket		= io.connect('http://inpost.kr:1340'),
+			socket		= io.connect('http://inpost.kr:' + port),
 			ftpList		= new FtpList(),
 			ftpInfo		= null,
 			ui_args 	= { wftp: this, socket: socket },
