@@ -308,7 +308,7 @@
 		//
 		
 		self.show = function() {
-			if(path == "") {
+			if(!wftp.isConn) {
 				alert("FTP 서버에 연결되지 않았습니다.");
 				return;
 			}

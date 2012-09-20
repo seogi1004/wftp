@@ -228,6 +228,8 @@
 		//
 		
 		act.changeMode = function(e, key) {
+			if(!isConnect()) return;
+			
 			if(key == "list") {
 				bind.listtype("block");
 				bind.viewtype("none");
@@ -252,6 +254,8 @@
 		}
 		
 		act.createDir = function(e) {
+			if(!isConnect()) return;
+			
 			main.body.wftp.popup.confirmShow("폴더생성하기", "", function(text) {
 				if(text == "") {
 					alert("폴더명을 입력해주세요.");
@@ -278,6 +282,15 @@
 		//
 		function alert(msg) {
 			main.body.wftp.popup.alertShow(msg);
+		}
+		
+		function isConnect() {
+			if(!main.body.wftp.isConn) {
+				alert("FTP 서버에 연결되지 않았습니다.");
+				return false;
+			}
+			
+			return true;
 		}
 		
 		

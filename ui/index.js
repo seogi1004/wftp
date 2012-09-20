@@ -50,9 +50,12 @@
 			if(args.result == "success") {
 				self.body.changePath("/");
 				self.body.left.initDir();
+				self.isConn = true;
 				
 				alert("FTP 서버의 연결이 성공하였습니다.");
 			} else {
+				self.isConn = false;
+				
 				alert("FTP 서버의 연결이 실패하였습니다.");
 			}
 		});
@@ -84,6 +87,8 @@
 		self.body 		= new FtpUIBody(_.extend({ id: "bodyWrap" }, ui_args));
 		self.footer		= new FtpUIFooter(_.extend({ id: "footerWrap" }, ui_args));
 		self.menu		= new FtpUIMenu(_.extend({ id: "menuWrap" }, ui_args));
+		
+		self.isConn		= false; // 접속 성공 여부
 		
 		
 		//--

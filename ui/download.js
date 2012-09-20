@@ -180,11 +180,6 @@
 		//
 		
 		self.show = function(downFiles) {
-			if(path == "") {
-				alert("FTP 서버에 연결되지 않았습니다.");
-				return;
-			}
-			
 			// UI 변경
 			self.bind.folderName(path);
 			
