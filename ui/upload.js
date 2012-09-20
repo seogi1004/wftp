@@ -195,11 +195,11 @@
 			
 			for(var i in self.uplist) {
 				(function(index) {
-					self.uplist[index].setPacketList(function(pList) {
-						self.sendFileList.push({
+					self.uplist[index].setPacketList(index, function(i, pList) {
+						self.sendFileList[i] = {
 							ftpFile: self.uplist[index],
 							packetList: pList
-						});
+						};
 						
 						count++;
 						

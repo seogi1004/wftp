@@ -248,29 +248,34 @@
 		//-- Public Methods
 		//
 				
-		this.setPacketList = function(callback) {
-		    var sliceSize = FtpFile.packetSize * 1024;
+		this.setPacketList = function(index, callback) {
+		    var sliceSize = FtpFile.packetSize * 1024,
+		  		slice = 0,
+		  		fr = new FileReader();
 		    
-		    var sliceCount = Math.ceil(file.size / sliceSize);
-		    var pList = [];
+			var slices = Math.ceil(file.size / sliceSize);
+			var pList = [];
 		    
-		    for(var i = 0; i < sliceCount; i++) {
-		        var start = i * sliceSize;
-		        var end = Math.min((i + 1) * sliceSize, file.size);
-		        
-		        var blob = (file.slice) ? file.slice(start, end) : file.webkitSlice(start, end);
-		        var reader = new FileReader();
-					
-				reader.readAsBinaryString(blob);
-				reader.onloadend = function(event) {
-					var data = event.target.result;
-					pList.push(data);
-					
-					if(pList.length == sliceCount) {
-						callback(pList);
+		    function loadNext() {
+				var start, end;
+			
+				start = slice * sliceSize;
+				end = start + sliceSize >= file.size ? file.size : start + sliceSize;
+			
+				fr.onload = function(event) {      
+					if(++slice <= slices) {
+						pList.push(event.target.result);
+				      	loadNext();
+					} else {
+						callback(index, pList);
 					}
-				}
-		    }
+				};
+				   
+				var blob = (file.slice) ? file.slice(start, end) : file.webkitSlice(start, end);
+				fr.readAsBinaryString(blob);
+			}
+			
+			loadNext();
 		}
 		
 		this.getPacketCount = function() {
@@ -303,9 +308,9 @@
 		this.setFullPath(this.name);
 	};
 	
-	FtpFile.fileUpMaxSize = 5;		// 업로드 파일 최대 용량 (단위 MB)
+	FtpFile.fileUpMaxSize = 100;	// 업로드 파일 최대 용량 (단위 MB)
 	FtpFile.fileDownMaxSize = 1;	// 다운로드 파일 최대 용량 (단위 MB)
-	FtpFile.packetSize = 64;		// 파일 패킷 전송시 크기 (단위 KB)
+	FtpFile.packetSize = 512;		// 파일 패킷 전송시 크기 (단위 KB)
 	
 	FtpFile.getSizeStr = function(size) {
 		var result = 0;

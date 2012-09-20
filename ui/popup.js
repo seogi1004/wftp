@@ -54,6 +54,19 @@
 			}, 500);
 		}
 		
+		self.notiShow = function() {
+			$.getJSON("notice.json", function(data) {
+				if(data.show) {
+					tpl.tpl_noti("popup_main", { notice:  data.html });
+					
+					$(tag.notice).width(data.width).height(data.height);
+					setTimeout(function() {
+						commonShow();
+					}, 50);
+				}
+			});
+		}
+		
 		self.alertShow = function(msg) {
 			tpl.tpl_alert("popup_main", { msg: msg });
 			commonShow();

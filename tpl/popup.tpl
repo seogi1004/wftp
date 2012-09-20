@@ -64,6 +64,20 @@
 		    </div>
 		</div>
 	</script>
+	
+	<script id="tpl_noti" type="text/template">
+		<div class="wrap_layer_popup">
+		    <div class="wrap_cont popup_font">
+		        <div class="area_head">
+		        	<h2>Notice</h2>
+		        </div>
+		        <div id="notice" class="area_msg">
+		        	<%= notice %>
+		        </div>
+		        <a class="type_btn btn_layer btn_close" data-act="commonCancel">닫기</a>
+		    </div>
+		</div>
+	</script>
 		
 	<script id="tpl_del" type="text/template">
 		<div class="wrap_layer_popup">

@@ -87,7 +87,8 @@
 		
 		
 		//--
-		alert("<p class='msg'>'wFTP 테스트' 서버는 한글 파일을 지원하지 않습니다.</p><p class='msg_info'>사용시 문제가 될 수 있으니 자제 부탁드립니다.</p>");
+		//alert("<p class='msg'>'wFTP 테스트' 서버는 한글 파일을 지원하지 않습니다.</p><p class='msg_info'>사용시 문제가 될 수 있으니 자제 부탁드립니다.</p>");
+		self.popup.notiShow();
 	}
 	
 	exports.FtpIndex = FtpIndex;
