@@ -167,7 +167,7 @@
 		self.resizeView = function() {
 			//-- 전체 높이 조정
 			var h1 = $(self.main.filelist.tag.viewRoot).height() + 100,
-				h2 = $("#dirRoot").height();
+				h2 = $("#dirRoot").height() + 100;
 			var h  = (h1 > h2) ? h1 : h2;
 				
 			if(h > initHeight) {
@@ -184,7 +184,14 @@
 			
 			switch(type) {
 				case "d_down":
-					alert("아직 구현되지 않은 기능입니다."); break;
+					if(ftpFile.size > (FtpFile.fileUpMaxSize * 1024 * 1024)) {
+						var msg = "<p class='msg_info'>파일 한 개당 최대 크기는 " + FtpFile.fileUpMaxSize  + "MB입니다.</p>";
+						alert("<p class='msg'><span>'" + ftpFile.name + "' 파일의 용량이 너무 큽니다.</span></p>" + msg);
+					} else {
+						wftp.popup.donwloadShow(path, ftpFile.name); 
+					}
+					
+					break;
 					
 				case "l_down":
 					if(isLink) window.open("http://" + ftpInfo.url + ftpFile.f_path);

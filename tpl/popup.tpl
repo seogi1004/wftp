@@ -135,6 +135,17 @@
 		    </div>
 		</div>
 	</script>
+
+	<script id="tpl_download" type="text/template">
+		<div class="wrap_layer_popup">
+		    <div class="wrap_cont">
+		        <div class="area_msg">
+		           <p class="msg" data-bind="download"><span class="loading">&nbsp;&nbsp;&nbsp;</span> 다운로드 준비 중입니다.</p>
+		        </div><!-- // area_body -->
+		        <a class="type_btn btn_layer btn_close" data-act="commonCancel">닫기</a>
+		    </div>
+		</div>
+	</script>
 	
 	<!--// 템플릿 영역 -->
 </div>

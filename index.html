@@ -34,14 +34,18 @@
 <script src="ui/footer.js"></script>
 <script src="ui/menu.js"></script>
 
-<script>window.MvvmUI = vo;</script>
+<script>
+	window.MvvmUI = vo;
+	window.host = "http://app.inpost.kr/wftp";
+</script>
 <script>
 	var index = null;
 	
 	$(function() {
-		index = new FtpIndex(1340);
+		index = new FtpIndex("http://inpost.kr:1340");
 	});	
 </script>
+
 </head>
 <body>
 	<div id="daumWrap">

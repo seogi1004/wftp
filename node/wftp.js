@@ -1,13 +1,15 @@
-var JSFtp = require("jsftp"),
-	FS = require('fs'),
-	_ = require("underscore"),
-	assert = require("assert");
+var _ = require("underscore"),
+	assert = require("assert"),
+	fs = require("fs");
 
-module.exports = function(socket, opts) {
+var JSFtp = require("jsftp");
+
+module.exports = function(pool, socket, opts) {
 	var def_order = {
 		"list"		: "procFtpList",
 		"upload"	: "procFtpUpload",
 		"download"	: "procFtpDownload",
+		"d_download": "procFtpDirectDownload",
 		"delete"	: "procFtpDelete",
 		"rename"	: "procFtpRename",
 		"mkdir"		: "procFtpMkdir",
@@ -133,6 +135,18 @@ module.exports = function(socket, opts) {
         }
 	}
 	
+	function procFtpDirectDownload(args) {
+		ftp.get(args.path + "/" + args.fileName, function(err, data) {
+			var f_path = "temp/" + socket.id + "/" + encodeURIComponent(args.fileName);
+			
+			fs.writeFile("./" + f_path, data, function(err) {
+				sendMessage(err, args, { 
+					f_path: f_path
+	    		});
+			});
+		});
+	}
+	
 	function procFtpRename(args) {
 		var fromPath = getPath(args.fromPath),
 			toPath = getPath(args.toPath);
@@ -200,10 +214,7 @@ module.exports = function(socket, opts) {
     	
     	if(err) {
             result = _.extend(def_info, { isError: true });
-	  		
-	  		console.log("-------------------------------");
-	  		console.log(err);
-	  		console.log("-------------------------------");
+	  		pool.printLog("wftp", result);
 	  	}
 	  	else	
             result = _.extend(def_info, result);

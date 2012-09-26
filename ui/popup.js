@@ -4,12 +4,14 @@
 		
 		var self	 = this,
 			wftp	 = opts.wftp,
+			socket 	 = opts.socket,
 			ftpList	 = wftp.getFtpList();
 			
 		var root	 = this.root,
 			tag		 = this.tag,
 			tpl		 = this.tpl,
-			act		 = this.act;
+			act		 = this.act,
+			bind	 = this.bind;
 		
 		
 		//-- Public Methods
@@ -94,7 +96,24 @@
 			commonShow();
 			tag.link_txt.focus();
 		}
+
+		self.donwloadShow = function(path, name) {
+			socket.emit("d_download", { path: path, fileName: name });
+			tpl.tpl_download("popup_main");
+			
+			commonShow();
+		}
 		
+		
+		//-- Socket Listeners
+		//
+		
+		socket.on("d_download", function(args) {
+			var url = window.host + "/node/" + args.f_path,
+				msg = "다운로드 준비를 완료하였습니다. <small> - <a href='" + url + "' target='_blank'>Link</a></small>";
+				
+			bind.download(msg);
+		});
 		
 		//-- Action Definition
 		//

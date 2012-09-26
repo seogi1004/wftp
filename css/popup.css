@@ -5,6 +5,7 @@
 .wrap_layer_popup .area_msg input { width: 150px; }
 .wrap_layer_popup .area_msg #document { border-width:0px; overflow: hidden; }
 .wrap_layer_popup .area_msg .link { width: 100%; }
+.wrap_layer_popup .area_msg .loading { background:url(http://app.inpost.kr/wftp/_daum/img/loading_12.gif) no-repeat; }
 
 #popupWrap { display: none; }
 #popupWrap .popup_confirm { z-index: 10002; margin-top: 0px; margin-left: 0px; position: fixed; display:none; }
