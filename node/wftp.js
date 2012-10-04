@@ -137,7 +137,7 @@ module.exports = function(pool, socket, opts) {
 	
 	function procFtpDirectDownload(args) {
 		ftp.get(args.path + "/" + args.fileName, function(err, data) {
-			var f_path = "temp/" + socket.id + "/" + encodeURIComponent(args.fileName);
+			var f_path = "temp/" + socket.id + "/" + args.fileName;
 			
 			fs.writeFile("./" + f_path, data, function(err) {
 				sendMessage(err, args, { 

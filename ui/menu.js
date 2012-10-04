@@ -49,6 +49,8 @@
 			if(callback) {
 				callback(type);
 				commonCancel();
+				
+				e.preventDefault();
 			}
 		}
 		
