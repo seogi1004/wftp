@@ -32,15 +32,15 @@
 							</div>
 						</td>
 						<td class="packet">
-							<span data-bind="<%= i %>:fileDown">0</span>/<%= items[i].u_size %>
+							<span data-bind="fileDown:<%= i %>">0</span>/<%= items[i].u_size %>
 						</td>
 						<td class="filestatus">
 							<span>
-								<span class="upload_wait" data-bind="<%= i %>:fileWait">대기 중</span>
+								<span class="upload_wait" data-bind="fileWait:<%= i %>">대기 중</span>
 							</span>
 						</td>
 						<td class="del">
-							<button class="btn_del2 ir" data-act="<%= items[i].index %>:fileDelete" data-tag="<%= i %>:fileDelBut">
+							<button class="btn_del2 ir" data-act="fileDelete:<%= items[i].index %>" data-tag="fileDelBut:<%= i %>">
 								<span>삭제하기</span>
 							</button>
 						</td>

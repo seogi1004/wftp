@@ -27,8 +27,8 @@
 <script id="ftpList1" type="text/template">
 	<% for(var i in items) { %>
 	<li>
-		<a href="#" data-act="<%= items[i].name %>:ftpConn"><%= items[i].name %></a>
-		<button class="btn_del2" data-act="<%= items[i].name %>:ftpDel"><span>삭제하기</span></button>
+		<a href="#" data-act="ftpConn:<%= items[i].name %>"><%= items[i].name %></a>
+		<button class="btn_del2" data-act="ftpDel:<%= items[i].name %>"><span>삭제하기</span></button>
 	</li>
 	<% } %>
 </script>
@@ -36,8 +36,8 @@
 <script id="ftpList2" type="text/template">
 	<% for(var i in items) { %>
 	<li>
-		<a href="#" data-act="<%= items[i].name %>:ftpConn"><%= items[i].name %></a>
-		<button class="btn_del2" data-act="<%= items[i].name %>:ftpDel"><span>삭제하기</span></button>
+		<a href="#" data-act="ftpConn:<%= items[i].name %>"><%= items[i].name %></a>
+		<button class="btn_del2" data-act="ftpDel:<%= items[i].name %>"><span>삭제하기</span></button>
 	</li>
 	<% } %>
 </script>

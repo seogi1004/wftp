@@ -37,15 +37,15 @@
 							</div>
 						</td>
 						<td class="packet">
-							<span data-bind="<%= i %>:fileDown">0</span>/<%= items[i].u_size %>
+							<span data-bind="fileDown:<%= i %>">0</span>/<%= items[i].u_size %>
 						</td>
 						<td class="filestatus">
 							<span>
-								<span class="upload_wait" data-bind="<%= i %>:fileWait">대기 중</span>
+								<span class="upload_wait" data-bind="fileWait:<%= i %>">대기 중</span>
 							</span>
 						</td>
 						<td class="del">
-							<button class="btn_del2 ir" data-act="<%= items[i].index %>:fileDelete" data-tag="<%= i %>:fileDelBut">
+							<button class="btn_del2 ir" data-act="fileDelete:<%= items[i].index %>" data-tag="fileDelBut:<%= i %>">
 								<span>삭제하기</span>
 							</button>
 						</td>
@@ -110,13 +110,13 @@
 			    </table>
 			</div>
 			<div class="apply_wrap">
-			    <label for="chkAllApply"><input type="checkbox" data-tag="checkall" data-act="<%= fileIndex %>:checkAll"> 모든 파일에 적용</label>
+			    <label for="chkAllApply"><input type="checkbox" data-tag="checkall" data-act="checkAll:<%= fileIndex %>"> 모든 파일에 적용</label>
 			</div>
 			<div class="btn_wrap2">
-			    <button class="btn_overwrite" data-act="<%= fileIndex %>:btnOverWrite"><span>덮어쓰기</span></button>
-			    <button class="btn_pass" data-act="<%= fileIndex %>:btnPass"><span>건너뛰기</span></button>
-			    <button class="btn_change_name" data-act="<%= fileIndex %>:btnChangeName"><span>이름변경</span></button>
-			    <button class="btn_stop_upload" data-act="<%= fileIndex %>:btnStopUpload"><span>전송중단</span></button>
+			    <button class="btn_overwrite" data-act="btnOverWrite:<%= fileIndex %>"><span>덮어쓰기</span></button>
+			    <button class="btn_pass" data-act="btnPass:<%= fileIndex %>"><span>건너뛰기</span></button>
+			    <button class="btn_change_name" data-act="btnChangeName:<%= fileIndex %>"><span>이름변경</span></button>
+			    <button class="btn_stop_upload" data-act="btnStopUpload:<%= fileIndex %>"><span>전송중단</span></button>
 			</div>
 		</script>
 		
@@ -128,8 +128,8 @@
 			            <span>이름변경하기</span><br><input data-tag="rename_txt" type="text" class="lyc txt1" value="<%= fileName %>">
 			        </div><!-- // area_body -->
 			        <div class="area_foot">
-			            <button class="btn_layer btn_ok" data-act="<%= fileIndex %>:btnChangeNameOk"><span>확인</span></button>
-			            <button class="btn_layer btn_cancel" data-act="<%= fileIndex %>:btnChangeNameCancel"><span>취소</span></button>
+			            <button class="btn_layer btn_ok" data-act="btnChangeNameOk:<%= fileIndex %>"><span>확인</span></button>
+			            <button class="btn_layer btn_cancel" data-act="btnChangeNameCancel:<%= fileIndex %>"><span>취소</span></button>
 			        </div><!-- // area_foot -->
 			        <!--
 			        <a href="javascript:;" class="type_btn btn_layer btn_close" id="closeDialogBtn">닫기</a>

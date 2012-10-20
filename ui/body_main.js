@@ -63,10 +63,12 @@
 		
 		act.changePath = function(e, path) {
 			main.body.changePath(path);
+			e.stopPropagation();
 		}
 		
 		act.link = function(e, name) {
 			main.body.readItem(name);
+			e.stopPropagation();
 		}
 		
 		act.checkedFile = function(e, index) {
@@ -93,11 +95,15 @@
 					checkedFile(target, index, isChecked);
 				}
 			}
+			
+			e.stopPropagation();
 		}
 		
 		act.showRenameTxt = function(e, index) {
 			$(tag.file_name[index]).hide();
 			$(tag.rename_txt[index]).show();
+			
+			e.stopPropagation();
 		}
 		
 		act.changeName = function(e, index) {
@@ -109,6 +115,8 @@
 				//
 				main.body.changeName(ftpFile.name, rename);
 			}
+			
+			e.stopPropagation();
 		}
 		
 		act.orderList = function(e, t) {
@@ -131,6 +139,8 @@
 					selOrder.removeClass("selectbox_" + o).addClass("selectbox_none");
 				}
 			}
+			
+			e.stopPropagation();
 		}
 
 		act.orderPreview = function(e, t, o) {
@@ -152,6 +162,8 @@
 					bind.orderName(arrName[t]);
 				});
 			}
+			
+			e.stopPropagation();
 		}
 		
 		// 프리뷰 형태에서만 사용
@@ -239,6 +251,7 @@
 			}
 			
 			main.changeMode(key);
+			e.stopPropagation();
 		}
 		
 		act.allChecked = function(e) {
@@ -251,6 +264,8 @@
 				
 				main.filelist.act.checkedFile({ target: elem }, i);
 			}
+			
+			e.stopPropagation();
 		}
 		
 		act.createDir = function(e) {
@@ -263,18 +278,23 @@
 					main.body.createDir(text);
 				}
 			});
+			
+			e.stopPropagation();
 		}
 		
 		act.deleteItem = function(e) { // 삭제 확인 UI 보이기
 			main.body.wftp.popup.delShow();
+			e.stopPropagation();
 		}
 		
 		act.checkedDown = function(e) {
 			main.body.checkedDown();
+			e.stopPropagation();
 		}
 		
 		act.nonDevelopMsg = function(e) {
 			alert("아직 구현되지 않은 기능입니다.");
+			e.stopPropagation();
 		}
 		
 		

@@ -14,12 +14,12 @@
 		        </div>
 		        <div class="area_msg">
 		        	<table>
-		        		<tr><td><label>Ftp Name</label></td><td><input type="text" data-tag="name:input"/></td></tr>
-		        		<tr><td><label>Host Address</label></td><td><input type="text" data-tag="host:input"/></td></tr>
-		        		<tr><td><label>User ID</label></td><td><input type="text" data-tag="user:input"/></td></tr>
-		        		<tr><td><label>Passward</label></td><td><input type="password" data-tag="passwd:input"/></td></tr>
-		        		<tr><td><label>Default Path</label></td><td><input type="text" data-tag="d_path:input"/></td></tr>
-		        		<tr><td><label>Ftp Url</label></td><td><input type="text" data-tag="url:input"/></td></tr>
+		        		<tr><td><label>Ftp Name</label></td><td><input type="text" data-tag="input:name"/></td></tr>
+		        		<tr><td><label>Host Address</label></td><td><input type="text" data-tag="input:host"/></td></tr>
+		        		<tr><td><label>User ID</label></td><td><input type="text" data-tag="input:user"/></td></tr>
+		        		<tr><td><label>Passward</label></td><td><input type="password" data-tag="input:passwd"/></td></tr>
+		        		<tr><td><label>Default Path</label></td><td><input type="text" data-tag="input:d_path"/></td></tr>
+		        		<tr><td><label>Ftp Url</label></td><td><input type="text" data-tag="input:url"/></td></tr>
 		        	</table>
 		        </div>
 		        <div class="area_foot">
@@ -35,7 +35,7 @@
 		<div class="wrap_layer_popup">
 		    <div class="wrap_cont popup_font">
 		        <div class="area_head">
-		        	<h2>Image Preview<small> - <%= down %><% if(isLink) { %>/<a href="#" data-act="<%= name %>:showLink">link</a><% } %></small></h2>
+		        	<h2>Image Preview<small> - <%= down %><% if(isLink) { %>/<a href="#" data-act="showLink:<%= name %>">link</a><% } %></small></h2>
 		        	<!--
 		        	<h2>Image Preview<% if(url) { %><small> - <a href="<%= url %>" target="_blank">Link</a></small><% } %></h2>
 		        	-->
@@ -52,7 +52,7 @@
 		<div class="wrap_layer_popup">
 		    <div class="wrap_cont popup_font">
 		        <div class="area_head">
-		        	<h2>Syntax Preview<small> - <%= down %><% if(isLink) { %>/<a href="#" data-act="<%= name %>:showLink">link</a><% } %></small></h2>
+		        	<h2>Syntax Preview<small> - <%= down %><% if(isLink) { %>/<a href="#" data-act="showLink:<%= name %>">link</a><% } %></small></h2>
 		        	<!--
 		        	<h2>Syntax Preview<% if(url) { %><small> - <a href="<%= url %>" target="_blank">Link</a></small><% } %></h2>
 		        	-->

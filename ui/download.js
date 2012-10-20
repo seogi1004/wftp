@@ -116,6 +116,8 @@
 				
 				updateMainInfo();	// 메인 파일정보 UI 변경
 			}
+			
+			e.stopPropagation();
 		}
 	};
 	

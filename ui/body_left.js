@@ -51,6 +51,7 @@
 		
 		act.showUpload = function(e, i) {
 			self.body.wftp.upload.show();
+			e.stopPropagation();
 		}
 		
 		act.changePath = function(e, path) {

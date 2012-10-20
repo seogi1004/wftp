@@ -72,15 +72,19 @@
 		
 		self.act.checkAll = function(e, i) {
 			isCkAll = !isCkAll;
+			e.stopPropagation();
 		}
 		
 		self.act.btnOverWrite = function(e, i) {
 			showUploadCheck("overwrite");
+			e.stopPropagation();
 		}
 		
 		self.act.btnPass = function(e, i) {
 			ui_uplist.delUploadFile(i);
 			showUploadCheck("pass");
+			
+			e.stopPropagation();
 		}
 		
 		self.act.btnChangeName = function(e, i) {
@@ -89,10 +93,13 @@
 
 			$(self.tag.dupl).hide();
 			$(self.tag.rename).show();
+			
+			e.stopPropagation();
 		}
 		
 		self.act.btnStopUpload = function(e, i) {
 			$(self.tag.dupl).hide();
+			e.stopPropagation();
 		}
 		
 		// 이름변경 UI, OK 버튼 클릭
@@ -104,12 +111,16 @@
 			
 			showUploadCheck();
 			$(self.tag.rename).hide();
+			
+			e.stopPropagation();
 		}
 		
 		// 이름변경 UI, Cacel 버튼 클릭
 		self.act.btnChangeNameCancel = function(e, i) {
 			showUploadCheck();
 			$(self.tag.rename).hide();
+			
+			e.stopPropagation();
 		}
 	}
 	
@@ -232,6 +243,7 @@
 		
 		self.act.fileDelete = function(e, i) {
 			self.delUploadFile(i);
+			e.stopPropagation();
 		}
 	};
 	
