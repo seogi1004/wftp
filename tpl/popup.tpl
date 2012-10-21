@@ -6,7 +6,7 @@
 	<div id="popup_main" class="popup DialogBox confirm popup_confirm"></div>
 	
 	<!-- 템플릿 영역 -->
-	<script id="tpl_auth" type="text/template">
+	<script data-tpl="popupWrap:tpl_auth" type="text/template">
 		<div class="wrap_layer_popup">
 		    <div class="wrap_cont popup_font">
 		        <div class="area_head">
@@ -31,7 +31,7 @@
 		</div>
 	</script>
 	
-	<script id="tpl_img" type="text/template">
+	<script data-tpl="popupWrap:tpl_img" type="text/template">
 		<div class="wrap_layer_popup">
 		    <div class="wrap_cont popup_font">
 		        <div class="area_head">
@@ -48,7 +48,7 @@
 		</div>
 	</script>
 	
-	<script id="tpl_doc" type="text/template">
+	<script data-tpl="popupWrap:tpl_doc" type="text/template">
 		<div class="wrap_layer_popup">
 		    <div class="wrap_cont popup_font">
 		        <div class="area_head">
@@ -65,7 +65,7 @@
 		</div>
 	</script>
 	
-	<script id="tpl_noti" type="text/template">
+	<script data-tpl="popupWrap:tpl_noti" type="text/template">
 		<div class="wrap_layer_popup">
 		    <div class="wrap_cont popup_font">
 		        <div class="area_head">
@@ -79,7 +79,7 @@
 		</div>
 	</script>
 		
-	<script id="tpl_del" type="text/template">
+	<script data-tpl="popupWrap:tpl_del" type="text/template">
 		<div class="wrap_layer_popup">
 		    <div class="wrap_cont">
 		        <div class="area_msg">
@@ -94,7 +94,7 @@
 		</div>
 	</script>
 	
-	<script id="tpl_alert" type="text/template">
+	<script data-tpl="popupWrap:tpl_alert" type="text/template">
 		<div class="wrap_layer_popup">
 		    <div class="wrap_cont">
 		        <div class="area_msg">
@@ -108,7 +108,7 @@
 		</div>
 	</script>
 
-	<script id="tpl_confirm" type="text/template">
+	<script data-tpl="popupWrap:tpl_confirm" type="text/template">
 		<div class="wrap_layer_popup">
 		    <div class="wrap_cont">
 		        <div class="area_msg">
@@ -124,7 +124,7 @@
 		</div>
 	</script>
 	
-	<script id="tpl_link" type="text/template">
+	<script data-tpl="popupWrap:tpl_link" type="text/template">
 		<div class="wrap_layer_popup">
 		    <div class="wrap_cont">
 		        <div class="area_msg">
@@ -136,7 +136,7 @@
 		</div>
 	</script>
 
-	<script id="tpl_download" type="text/template">
+	<script data-tpl="popupWrap:tpl_download" type="text/template">
 		<div class="wrap_layer_popup">
 		    <div class="wrap_cont">
 		        <div class="area_msg">

@@ -4,7 +4,7 @@
 	<!--// 컨텐츠 영역 -->
 	
 	<!-- 템플릿 영역 -->
-	<script id="tpl_order" type="text/template">
+	<script data-tpl="menuWrap:tpl_order" type="text/template">
 		<ul class="items">
 			<li class="item_0"><a href="#" data-act="orderOk:ext">종류</a></li>
 			<li class="item_1"><a href="#" data-act="orderOk:name">이름</a></li>
@@ -13,7 +13,7 @@
 		</ul>
 	</script>
 	
-	<script id="tpl_menu_f" type="text/template">
+	<script data-tpl="menuWrap:tpl_menu_f" type="text/template">
 		<ul class="items">
 			<li class="item_0"><a href="#" data-act="menuOk:d_down">직접받기</a></li>
 			<li class="item_1 delimiter"><span class="">----</span></li>
@@ -27,7 +27,7 @@
 		</ul>
 	</script>
 
-	<script id="tpl_menu_d" type="text/template">
+	<script data-tpl="menuWrap:tpl_menu_d" type="text/template">
 		<ul class="items">
 			<li class="item_0"><a href="#" data-act="menuOk:join">들어가기</a></li>
 			<li class="item_1 delimiter"><span class="">----</span></li>

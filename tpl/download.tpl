@@ -22,7 +22,7 @@
 				</table>
 				
 				<!-- 파일 다운로드 리스트 -->
-				<script id="tpl_downlist" type="text/template">
+				<script data-tpl="downloadWrap:tpl_downlist" type="text/template">
 					<% for(var i in items) { %>
 				    <tr>
 						<td class="upload_name">

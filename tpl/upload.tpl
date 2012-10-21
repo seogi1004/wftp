@@ -27,7 +27,7 @@
 				</table>
 				
 				<!-- 파일 업로드 리스트 -->
-				<script id="tpl_uplist" type="text/template">
+				<script data-tpl="uploadWrap:tpl_uplist" type="text/template">
 					<% for(var i in items) { %>
 				    <tr>
 						<td class="upload_name">
@@ -89,7 +89,7 @@
 		<div class="popup DialogBox confirm layer_change_name popup_dupl_rename" data-tpl="tpl_rename" data-tag="rename"></div>
 	
 		<!-- 중복 파일 안내 팝업 -->
-		<script id="tpl_dupl" type="text/template">
+		<script data-tpl="uploadWrap:tpl_dupl" type="text/template">
 			<div class="msg_wrap2">
 		    	<span>"<%= fileName %>"</span> 파일이<br>이 위치에 이미 있습니다.
 			</div>
@@ -121,7 +121,7 @@
 		</script>
 		
 		<!-- 중복 파일 안내 팝업, 이름 변경 -->
-		<script id="tpl_rename" type="text/template">
+		<script data-tpl="uploadWrap:tpl_rename" type="text/template">
 			<div class="wrap_layer_popup">
 			    <div class="wrap_cont">
 			        <div class="area_msg">

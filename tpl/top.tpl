@@ -24,7 +24,7 @@
 	</div>
 </div>
 
-<script id="ftpList1" type="text/template">
+<script data-tpl="topWrap:ftpList1" type="text/template">
 	<% for(var i in items) { %>
 	<li>
 		<a href="#" data-act="ftpConn:<%= items[i].name %>"><%= items[i].name %></a>
@@ -33,7 +33,7 @@
 	<% } %>
 </script>
 
-<script id="ftpList2" type="text/template">
+<script data-tpl="topWrap:ftpList2" type="text/template">
 	<% for(var i in items) { %>
 	<li>
 		<a href="#" data-act="ftpConn:<%= items[i].name %>"><%= items[i].name %></a>

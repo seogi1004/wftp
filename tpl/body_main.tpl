@@ -55,7 +55,7 @@
 	<span id="filelist_view"></span>
 	
 	<!-- 프리뷰 타입, Template -->
-	<script id="tpl_view" type="text/template">
+	<script data-tpl="m_filelist:tpl_view" type="text/template">
 		<div class="icon_header">
 			<div class="fl">
 				<span class="fl">정렬기준&nbsp;&nbsp;:&nbsp;&nbsp;</span>
@@ -103,7 +103,7 @@
 	<!--// 프리뷰 타입 -->
 	
 	<!-- 리스트 타입, Template -->
-	<script id="tpl_list" type="text/template">
+	<script data-tpl="m_filelist:tpl_list" type="text/template">
 		<table class="list_header" border="0" cellpadding="0" cellspacing="0">
 		    <thead>
 		        <tr>
