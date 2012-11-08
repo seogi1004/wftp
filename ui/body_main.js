@@ -23,8 +23,10 @@
 			if(type == "list") {
 				tpl.tpl_list("filelist_view", args);
 			} else {
+				main.body.viewThumbs(items); // 썸네일 처리
 				tpl.tpl_view("filelist_view", args);
 			}
+			
 			
 			//-- UI 설정
 			$(tag.filelist_view).find(".item").hover(function(e) {

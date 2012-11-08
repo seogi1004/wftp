@@ -67,6 +67,10 @@ module.exports = function(pool, socket) {
 		if(ftpm != null) ftpm.message('read', args);
     });
 
+	socket.on('thumb', function(args) {
+		if(ftpm != null) ftpm.message('thumb', args);
+    });
+
     socket.on('disconnect', function() {
     	pool.delUser(self);
 		if(ftpm != null) ftpmClose();

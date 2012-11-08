@@ -14,7 +14,8 @@ module.exports = function(pool, socket, opts) {
 		"rename"	: "procFtpRename",
 		"mkdir"		: "procFtpMkdir",
 		"rmdir"		: "procFtpRmdir",
-		"read"		: "procFtpRead"
+		"read"		: "procFtpRead",
+		"thumb"		: "procFtpThumb"
 	};
 	
 	var def_opts = _.extend({
@@ -186,7 +187,18 @@ module.exports = function(pool, socket, opts) {
 				is_syn: args.is_syn
 			});
 		});
-		/**/
+	}
+
+	function procFtpThumb(args) {
+       ftp.get(args.path, function(err, data) {
+	       var result = getPacketList(data);
+	       
+	       sendMessage(err, args, { 
+	       		index: args.index,
+	       		ext: args.ext, 
+				data: result.join("")
+			});
+		});
 	}
 	
 	/**

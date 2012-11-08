@@ -148,6 +148,20 @@
 				});
 			}
 		}
+
+		self.viewThumbs = function(items) {
+			for(var i in items) {
+				var item = items[i];
+				
+				if(!item.is_dir && item.t_ext == "img") {
+					socket.emit("thumb", { 
+						index: i,
+						ext: item.ext,
+						path: item.f_path
+					});
+				}
+			}
+		}
 		
 		self.checkedDown = function() {
 			var c_count = 0;
@@ -211,7 +225,7 @@
 					}); break;
 					
 				case "delete":
-					self.deleteItem(); break;
+					wftp.popup.delShow(); break;
 					
 				case "preview":
 					if(ftpFile.is_syn || ftpFile.t_ext == "img") self.readItem(ftpFile.name);
@@ -311,6 +325,27 @@
 				wftp.setTempDoc(args.ext, Base64.decode(args.data));
 				wftp.popup.docShow(args.data, args.name);
 			}
+		});
+
+		socket.on("thumb", function(args) {
+			if(args.isError) return;
+			
+			var blobImg = "data:image/" + args.ext + ";base64," + args.data,
+				bind = self.main.filelist.bind;
+			
+			bind.thumb(args.index, blobImg);
+			setTimeout(function() { 
+				var img = bind.get("thumb")[args.index];
+				
+				FtpUtil.imgResize(img, {
+					maxWidth: 100,
+					maxHeight: 80,
+					ieWidth: 100,
+					ieHeight: 80
+				});
+				
+				img.style.display = "";
+			}, 10);
 		});
 		
 		socket.on("rename", function(args) {
@@ -426,6 +461,8 @@
 		function alert(msg) {
 			wftp.popup.alertShow(msg);
 		}
+		
+		
 		
 		//-- Public Property
 		//
