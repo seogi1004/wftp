@@ -1,3 +1,7 @@
+process.on('uncaughtException', function (err) {
+	console.log('Caught exception: ' + err);
+});
+
 var _ = require("underscore"),
 	io = require('socket.io').listen(1340);
 
