@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE> New Document </TITLE>
+  <META NAME="Generator" CONTENT="EditPlus">
+  <META NAME="Author" CONTENT="">
+  <META NAME="Keywords" CONTENT="">
+  <META NAME="Description" CONTENT="">
+   <script src="BigInt.js"></script>
+ <script src="Barrett.js"></script>
+ <script src="RSA.js"></script>
+ <script>
+ onload=function() {
+	var key = new RSAKeyPair(
+	 "",
+	 "15adcf",
+	 "139c45"
+	);
+
+	//document.getElementById("a").innerHTML = encryptedString(key, "abcdef123");
+	alert(decryptedString(key, "00114bc7 0012e94b 000de890 dd34 0002db26"));
+ }
+ </script>
+ </HEAD>
+ <BODY>
+	<div id="a"></div>
+  
+ </BODY>
+</HTML>

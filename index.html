@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>[wFTP] - 웹 기반의 FTP 클라이언트</title>
+<meta charset="utf-8">
+<meta name="description" content="wFTP Client">
+<meta name="author" content="Moon-Hak-I">
+
+<link rel="stylesheet" href="http://static.inpost.kr/lib/jquery/plugins/treeview/jquery.treeview.css" />
+<link rel="stylesheet" href="_daum/css/cloud.css" />
+<link rel="stylesheet" href="css/upload.css" />
+<link rel="stylesheet" href="css/download.css" />
+<link rel="stylesheet" href="css/top.css" />
+<link rel="stylesheet" href="css/body.css" />
+<link rel="stylesheet" href="css/popup.css" />
+
+<script src="http://static.inpost.kr/lib/underscore/underscore.js"></script>
+<script src="http://static.inpost.kr/lib/jquery/jquery.js"></script>
+<script src="http://static.inpost.kr/lib/jquery/plugins/ui/jquery-ui-1.8.22.custom.min.js"></script>
+<script src="http://static.inpost.kr/lib/jquery/plugins/treeview/jquery.treeview.js"></script>
+<script src="http://static.inpost.kr/lib/etc/webtoolkit.base64.js"></script>
+<script src="http://app.inpost.kr:1340/socket.io/socket.io.js"></script>
+<script src="http://app.inpost.kr/vojs/vo.min.js"></script>
+
+<script src="js/util.js"></script>
+<script src="ui/_common.js"></script>
+<script src="ui/index.js"></script>
+<script src="ui/upload.js"></script>
+<script src="ui/download.js"></script>
+<script src="ui/popup.js"></script>
+<script src="ui/top.js"></script>
+<script src="ui/body.js"></script>
+<script src="ui/body_left.js"></script>
+<script src="ui/body_main.js"></script>
+<script src="ui/footer.js"></script>
+<script src="ui/menu.js"></script>
+
+<script>
+	window.host = "http://app.youngman.kr/wftp";
+</script>
+<script>
+	if($.browser.msie) {
+		alert("익스플로러에서는 기능이 제대로 동작하지 않습니다.\n크롬과 파이어폭스 최신 버전에서 실행하는 것을 권장합니다.");
+	}
+	
+	$(function() {
+		window.index = new FtpIndex("http://inpost.kr:1340");
+	});	
+</script>
+
+</head>
+<body>
+	<div id="daumWrap">
+		<div id="topWrap"></div><hr>
+		<div id="bodyWrap"></div><hr>
+		<div id="footerWrap"></div>
+	</div>
+
+	<!-- 템플릿 로드 하는 부분 -->
+	<script>vo.includeTpl("_common", "upload", "download", "popup", "menu", "topWrap:top", "bodyWrap:body", "footerWrap:footer", { path: "tpl" });</script>
+    
+    <!-- 페이스북 소셜 기능 -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/ko_KR/all.js#xfbml=1&appId=202014293252285";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    
+    <!-- 이지로직 에디터 -->
+    <form class="form-horizontal" target="_blank" name="frm" action="http://editor.easylogic.co.kr/code.php" method="POST">
+		<input type="hidden" name="code" />
+		<input type="hidden" name="mode" />
+		<input type="hidden" name="path" />
+		<input type="hidden" name="d_path" />
+		<input type="hidden" name="host" />
+		<input type="hidden" name="passwd" />
+		<input type="hidden" name="user" />
+		<input type="hidden" name="post_url" value="http://app.youngman.kr/wftp/el-editor.php" />
+		<input type="hidden" name="readonly" value="N" />
+		<input type="hidden" name="theme" value="twilight" />
+		<input type="hidden" name="charset" value="utf-8" />
+	</form>
+</body>
+</html>

@@ -1,0 +1,23 @@
+/*--------------------------------------------------------------------------------
+			body
+--------------------------------------------------------------------------------*/
+#leftWrap { width: 205px; }
+#leftFlexBar { left: 195px; }
+#mainWrap { margin-left: 205px; }
+
+#m_filelist { -webkit-user-select: none; -moz-user-select: none; -khtml-user-select: none; }
+#m_filelist .image,.name a { cursor: pointer; }
+#m_filelist .name span a { cursor: text; }
+#m_filelist .name span input { display: none; }
+#m_filelist .c_c_3,.c_c_1 a { cursor: pointer; }
+#m_filelist .c_c_3 span input { display: none; }
+#m_filelist th.h_c_5, td.c_c_5 { width: 130px; }
+#m_filelist th.h_c_6, td.c_c_6 { width: 10px; }
+#m_filelist .btn_rename { opacity: 0.7; padding-top: 5px; }
+
+/*--------------------------------------------------------------------------------
+			body_left, tree
+--------------------------------------------------------------------------------*/
+#leftWrap .folder_list_wrap { color: #333; font-family: "돋움", dotum, sans-serif; font-size: 12px; line-height: 16px; }
+#leftWrap .filetree span.folder, .filetree span.file { padding-left: 20px; }
+#leftWrap .left_status_wrap { height: 1px; }

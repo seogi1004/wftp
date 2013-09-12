@@ -1,0 +1,8 @@
+gnore-file.txt
+
+# /로 끝나면 해당 디렉토리 전체를 무시
+node/node_modules/
+node/nohup.out
+# 와일드카드도 사용가능
+#ignore-file*
+#*.log

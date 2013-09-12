@@ -1,0 +1,13 @@
+#사용하는 이미지 목록
+
+http://app.inpost.kr/wftp/_daum/img/bt_side_block.gif
+http://app.inpost.kr/wftp/_daum/img/ico_folder_v4.gif 
+http://app.inpost.kr/wftp/_daum/img/bt_all_file_v17.gif 
+http://app.inpost.kr/wftp/_daum/img/bt_upload.gif 
+http://app.inpost.kr/wftp/_daum/img/ico_arrow.gif 
+http://app.inpost.kr/wftp/_daum/img/bg.gif 
+http://app.inpost.kr/wftp/_daum/img/img_bar_v2.gif 
+http://app.inpost.kr/wftp/_daum/img/ico_all_arrows.gif 
+http://app.inpost.kr/wftp/_daum/img/ico_all_type_v6.gif 
+http://app.inpost.kr/wftp/_daum/img/tab_list_align.gif 
+http://app.inpost.kr/wftp/_daum/img/file_upload_v2.gif 

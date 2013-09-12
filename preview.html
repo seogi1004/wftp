@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>[wFTP] - 웹 기반의 FTP 클라이언트, 프리뷰</title>
+<script type="text/javascript" src="http://static.inpost.kr/lib/jquery/jquery.js"></script>
+<script type="text/javascript" src="http://static.inpost.kr/lib/syntaxhighlighter/scripts/shCore.js"></script>
+<script type="text/javascript" src="http://static.inpost.kr/lib/syntaxhighlighter/scripts/shAutoloader.js"></script>
+<link type="text/css" rel="stylesheet" href="http://static.inpost.kr/lib/syntaxhighlighter/styles/shCoreDefault.css"/>
+
+<style type='text/css'>
+.syntaxhighlighter table tbody { font-size: 0.8em !important; }
+</style>
+
+<script>
+function path() {
+	var args = arguments,
+		result = [];
+
+	for(var i = 0; i < args.length; i++)
+		result.push(args[i].replace('@', 'http://static.inpost.kr/lib/syntaxhighlighter/scripts/'));
+
+	return result
+};
+
+$(function() {
+	var doc = parent.index.getTempDoc();
+			
+	$("pre").each(function(i) {
+		if(doc.ext != this.id) {
+			$(this).remove();
+		} else {
+			$(this).text(doc.data);
+			
+			SyntaxHighlighter.all();
+		}
+	});
+});
+</script>
+</head>
+<body>
+	
+<pre id="js" class="brush: js;"></pre>
+<pre id="xml" class="brush: xml;"></pre>
+<pre id="xhtml" class="brush: xml;"></pre>
+<pre id="xslt" class="brush: xml;"></pre>
+<pre id="html" class="brush: xml;"></pre>
+<pre id="vb" class="brush: vb;"></pre>
+<pre id="sql" class="brush: sql;"></pre>
+<pre id="txt" class="brush: text;"></pre>
+<pre id="log" class="brush: text;"></pre>
+<pre id="php" class="brush: php;"></pre>
+<pre id="pl" class="brush: pl;"></pre>
+<pre id="perl" class="brush: pl;"></pre>
+<pre id="java" class="brush: java;"></pre>
+<pre id="css" class="brush: css;"></pre>
+<pre id="cs" class="brush: c#;"></pre>
+<pre id="cpp" class="brush: cpp;"></pre>
+<pre id="c" class="brush: c;"></pre>
+<pre id="bash" class="brush: bash;"></pre>
+<pre id="shell" class="brush: shell;"></pre>
+
+<script>
+SyntaxHighlighter.autoloader.apply(null, path(
+	'applescript            @shBrushAppleScript.js',
+	'actionscript3 as3      @shBrushAS3.js',
+	'bash shell             @shBrushBash.js',
+	'coldfusion cf          @shBrushColdFusion.js',
+	'cpp c                  @shBrushCpp.js',
+	'c# c-sharp csharp      @shBrushCSharp.js',
+	'css                    @shBrushCss.js',
+	'delphi pascal          @shBrushDelphi.js',
+	'diff patch pas         @shBrushDiff.js',
+	'erl erlang             @shBrushErlang.js',
+	'groovy                 @shBrushGroovy.js',
+	'java                   @shBrushJava.js',
+	'jfx javafx             @shBrushJavaFX.js',
+	'js jscript javascript  @shBrushJScript.js',
+	'perl pl                @shBrushPerl.js',
+	'php                    @shBrushPhp.js',
+	'text plain             @shBrushPlain.js',
+	'py python              @shBrushPython.js',
+	'ruby rails ror rb      @shBrushRuby.js',
+	'sass scss              @shBrushSass.js',
+	'scala                  @shBrushScala.js',
+	'sql                    @shBrushSql.js',
+	'vb vbnet               @shBrushVb.js',
+	'xml xhtml xslt html    @shBrushXml.js'
+));
+</script>
+
+</body>
+</html>
